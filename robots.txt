@@ -1,4 +1,5 @@
 user-agent: *
 Allow: /$
 Allow: /style.css
+Allow: /cdn-cgi
 Disallow: /
