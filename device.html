@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device media querys</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .queries {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .queries .query {
+            margin-bottom: 15px;
+        }
+
+
+        .query:after {
+            content: 'Something is wrong...';
+
+            color: white;
+            background-color: tomato;
+        }
+
+        /* Pointer queries */
+
+        /* (can be) keyboard controls ect. */
+        @media (pointer: none) {
+            .query.pointer:after {
+                content: 'none';
+                background-color: tomato;
+            }
+        }
+        /* smartphones, tocuh screens */
+        @media (pointer: coarse) {
+            .query.pointer:after {
+                content: 'corse';
+                background-color: orange;
+            }
+        }
+        /* stylus, mouse, S-Pen & more */
+        @media (pointer: fine) {
+            .query.pointer:after {
+                content: 'fine';
+                background-color: limegreen;
+            }
+        }
+
+        /* Hover queries */
+
+        /* (can be) Keyboard controls */
+        @media (hover: none) {
+            .query.hover:after {
+                content: 'none';
+                background-color: tomato;
+            }
+        }
+        /* smartphones, tocuh screens */
+        @media (hover: hover) {
+            .query.hover:after {
+                content: 'hover';
+                background-color: limegreen;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Device media querys</h1>
+        <div class="queries">
+            <span class="query pointer">Primary Input Pointer: </span>
+            <span class="query hover">Primary Input Hover: </span>
+        </div>
+        
+    </div>
+</body>
+</html>
